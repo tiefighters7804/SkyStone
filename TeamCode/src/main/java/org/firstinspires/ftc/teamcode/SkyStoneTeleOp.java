@@ -48,6 +48,9 @@ public class SkyStoneTeleOp extends OpMode {
         lfMotor.setDirection(DcMotorSimple.Direction.REVERSE);
         lrMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
+        verticalLift.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        horizontalLift.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
     }
 
     @Override
@@ -74,11 +77,11 @@ public class SkyStoneTeleOp extends OpMode {
         }
 
         if (gamepad1.a) {
-            lefttray.setPosition(0.9);
-            righttray.setPosition(0.9);
+            lefttray.setPosition(0.2);
+            righttray.setPosition(0.2);
         } else if (gamepad1.b) {
-            lefttray.setPosition(0.5);
-            righttray.setPosition(0.5);
+            lefttray.setPosition(0.6);
+            righttray.setPosition(0.7);
         }
 
         Out = -gamepad2.left_stick_y;
@@ -88,16 +91,13 @@ public class SkyStoneTeleOp extends OpMode {
         verticalLift.setPower(Up);
 
         if (gamepad2.a) {
-            gripper.setPosition(0.1);
+            gripper.setPosition(0.4);
         }
 
         if (gamepad2.b) {
-            gripper.setPosition(0.3);
+            gripper.setPosition(0.8);
         }
 
-        if (gamepad2.y) {
-            gripper.setPosition(0.9);
-        }
 
     }
 }
