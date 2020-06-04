@@ -10,14 +10,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 public class VelocityVortexRev3 extends OpMode {
 
 
-    DcMotor lfMotor;
-    DcMotor rfMotor;
-    DcMotor lrMotor;
-    DcMotor rrMotor;
-    DcMotor intake;
-    DcMotor ballShooter1;
-    DcMotor ballShooter2;
-
+    DcMotor lfMotor, lrMotor, rfMotor, rrMotor, intake, ballShooter1, ballShooter2;
 
     double Vertical;
     float Horizontal;
@@ -51,6 +44,7 @@ public class VelocityVortexRev3 extends OpMode {
         Vertical = -gamepad1.left_stick_y;
         Horizontal = -gamepad1.left_stick_x;
         Pivot = gamepad1.right_stick_x;
+
         rfMotor.setPower(-Pivot + (Vertical - Horizontal));
         rrMotor.setPower(-Pivot + Vertical + Horizontal);
         lfMotor.setPower(Pivot + Vertical + Horizontal);
