@@ -16,7 +16,6 @@ public class SkyStoneTeleOp extends OpMode {
     float Pivot;
 
     double Out;
-
     double Up;
 
     Servo gripper, lefttray, righttray;
