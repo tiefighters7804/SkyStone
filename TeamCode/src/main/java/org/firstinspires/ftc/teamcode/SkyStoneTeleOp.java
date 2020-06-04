@@ -9,13 +9,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 @TeleOp(name = "Sky Stone TeleOp", group = "sky stone")
 public class SkyStoneTeleOp extends OpMode {
 
-    DcMotor lfMotor;
-    DcMotor rfMotor;
-    DcMotor lrMotor;
-    DcMotor rrMotor;
-    DcMotor verticalLift;
-    DcMotor horizontalLift;
-    DcMotor tapeMotor;
+    DcMotor lfMotor, rfMotor, lrMotor, rrMotor, verticalLift, horizontalLift, tapeMotor;
 
     double Vertical;
     float Horizontal;
@@ -25,9 +19,7 @@ public class SkyStoneTeleOp extends OpMode {
 
     double Up;
 
-    Servo gripper;
-    Servo lefttray;
-    Servo righttray;
+    Servo gripper, lefttray, righttray;
 
 
     @Override
