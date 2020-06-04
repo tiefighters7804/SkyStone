@@ -1,5 +1,8 @@
 package org.firstinspires.ftc.teamcode.pure.pursuit;
 
+import static org.firstinspires.ftc.teamcode.Odometry.OdometryGlobalPosition.robotGlobalXCoordinatePosition;
+import static org.firstinspires.ftc.teamcode.Odometry.OdometryGlobalPosition.robotGlobalYCoordinatePosition;
+import static org.firstinspires.ftc.teamcode.Odometry.OdometryGlobalPosition.robotOrientationRadians;
 import static org.firstinspires.ftc.teamcode.pure.pursuit.MathFunctions.AngleWrap;
 
 
@@ -12,11 +15,11 @@ public class RobotMovement {
      * @param movementSpeed
      */
     public static void goToPosition (double x, double y, double movementSpeed) {
-      double distanceToTarget = Math.hypot(x-, y -);
+      double distanceToTarget = Math.hypot(x- robotGlobalXCoordinatePosition, y - robotGlobalYCoordinatePosition);
 
-      double absoluteAngleToTarget = Math.atan2(y-, x-) ;
+      double absoluteAngleToTarget = Math.atan2(y- robotGlobalYCoordinatePosition, x- robotGlobalXCoordinatePosition) ;
 
-      double relativeAngleToPoint = AngleWrap(absoluteAngleToTarget - (worldAngle_rad - Math.toRadians(90)));
+      double relativeAngleToPoint = AngleWrap(absoluteAngleToTarget - (robotOrientationRadians - Math.toRadians(90)));
 
 
       double relativeXToPoint = Math.cos(relativeAngleToPoint) * distanceToTarget;
@@ -27,6 +30,7 @@ public class RobotMovement {
 
       movement_x = movementXPower;
       movement_y = movementYPower;
+
 
     }
 }
